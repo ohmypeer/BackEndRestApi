@@ -5,9 +5,29 @@ from Categories.models import (
     WorkMode, Alcohol, Smoking, Chronotype, Religion, Food,
     PersonalityFeature, Hobby
 )
+from images.models import Image
 
 
 class Account(AbstractUser):
+
+    avatar = models.ForeignKey(
+        Image,
+        on_delete=models.PROTECT,
+        blank=True,
+        null=True
+    )
+
+    name = models.CharField(
+        max_length=255,
+        blank = True,
+        null = True,
+    )
+
+    surname = models.CharField(
+        max_length=255,
+        blank = True,
+        null = True,
+    )
 
     birth_date = models.DateField(
         blank = True,
@@ -52,7 +72,7 @@ class Account(AbstractUser):
         )
 
     originally_from = models.ForeignKey(
-        ZodiacSign,
+        Country,
         on_delete = models.CASCADE,
         blank = True,
         null = True,
@@ -129,7 +149,7 @@ class Account(AbstractUser):
         )
 
     hobbies = models.ForeignKey(
-        PersonalityFeature,
+        Hobby,
         on_delete = models.CASCADE,
         blank = True,
         null = True,
