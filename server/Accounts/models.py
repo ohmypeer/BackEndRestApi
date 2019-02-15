@@ -162,6 +162,7 @@ class Account(AbstractUser):
         default='more about me...'
     )
 
+
     def __str__(self):
         return self.username
 

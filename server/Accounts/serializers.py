@@ -89,3 +89,95 @@ class AccountSerializer(serializers.ModelSerializer):
 
     def get_hobbies(self, obj):
             return obj.hobbies.name
+
+
+class CompanionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Companion
+        fields = [
+            'husband',
+            'wife',
+            'friend_m',
+            'friend_w',
+            'baby',
+            'teenager_m',
+            'teenager_w',
+            'son',
+            'daughter',
+            'mother',
+            'father',
+            'cat',
+            'dog',
+            'bird',
+            'fish',
+            'lizard',
+            'snail',
+            'snake',
+            'modified',
+            'created',
+            ]
+
+
+class PersonalityFeatureSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PersonalityFeature
+        fields = [
+            'introvert',
+            'ambivert',
+            'extravert',
+            'racionalnyi',
+            'emocionalnyi',
+            'optimist',
+            'pessimist',
+            'domosed',
+            'neposeda',
+            'serieznyi',
+            'bezzabotnyi',
+            'perfeczianist',
+            'optimalist',
+            'trebovatelnyi',
+            'snishoditelnyi',
+            'molchalivyi',
+            'razgovorchivyi',
+            'lenivyi',
+            'trudolybivyi',
+            'ambicioznyi',
+            'neprityazatelnyi',
+            'spokoynyi',
+            'ishyshyi',
+            'analitycheskyi',
+            'gumanitarnyi',
+            'modified',
+            'created',
+            ]
+
+
+class HobbySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Hobby
+        fields = [
+            'sport',
+            'music',
+            'cinema',
+            'cooking',
+            'shoping',
+            'theater',
+            'traveling',
+            'camping',
+            'reading',
+            'drawing',
+            'handiwork',
+            'doing_music',
+            'collecting',
+            'museums',
+            'hunting',
+            'fishing',
+            'photo',
+            'dancing',
+            'magician',
+            'herbalism',
+            'learning_languages',
+            'learning_history',
+            'modified',
+            'created',
+            ]
